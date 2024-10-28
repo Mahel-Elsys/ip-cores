@@ -1,0 +1,23 @@
+digraph G {
+        rankdir=LR;
+        label = "rs232_syscon";
+
+        // Define nodes within the rs232_syscon box
+        "Clock_generation" [label="Clock generation", shape=box];
+        "rs232tx" [label="rs232tx", shape=box];
+        "rs232rx" [label="rs232rx", shape=box];
+
+        // Define edges within the rs232_syscon box
+        "Clock_generation" -> "rs232tx" [label=""];
+        "Clock_generation" -> "rs232rx" [label="Baud clock"];
+
+        // Define external inputs and outputs
+        Data_in [label="Data in", shape=plaintext];
+        Data_out [label="Data out", shape=plaintext];
+
+        // Connect external nodes to the internal nodes
+        Data_in -> "rs232tx";
+        Data_in -> "Clock_generation"
+        "rs232rx" -> Data_out;
+}
+

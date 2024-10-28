@@ -146,13 +146,7 @@
 //-------------------------------------------------------------------------------------
 
 
-`define NIBBLE_SIZE 4        // Number of bits in one nibble
-
-// The command register has these values
-`define CMD_0 0              // Unused command
-`define CMD_I 1              // Initialize (or reset)
-`define CMD_R 2              // Read
-`define CMD_W 3              // Write
+`include defines.v
 
 module rs232_syscon (
   clk_i,
@@ -350,12 +344,6 @@ wire [7:0] rs232_tx_char;   // Either rs232_rx_char or msg_char
 // Instantiations
 //--------------------------------------------------------------------------
 
-
-// These defines are for the rs232 interface
-`define START_BITS 1
-`define DATA_BITS 8
-`define STOP_BITS 1
-`define CLOCK_FACTOR 8
 
 // This module generates a serial BAUD clock automatically.
 // The unit synchronizes on the carriage return character, so the user
