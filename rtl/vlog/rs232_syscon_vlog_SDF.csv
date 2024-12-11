@@ -1,0 +1,124 @@
+file_name(serial.v)
+component;signal_name;type;size;instance src;component_src;instance_dst;component_dst
+rs232tx;clk;wire;1;input;input;rs232tx;rs232tx
+rs232tx;tx_clk;wire;1;input;input;rs232tx;rs232tx
+rs232tx;reset;wire;1;input;input;rs232tx;rs232tx
+rs232tx;load;wire;1;input;input;rs232tx;rs232tx
+rs232tx;data;wire [data_bits_pp-1:0];data_bits_pp;input;input;rs232tx;rs232tx
+rs232tx;load_request;wire;1;rs232tx;rs232tx;output;output
+rs232tx;txd;wire;1;rs232tx;rs232tx;output;output
+Internal;pulse;wire;1;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;dds_clk;wire;1;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;dds_phase_increment;wire  [dds_bits_pp-2:0];unknown;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;delayed_pulse;reg;1;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;dds_prescale_count;reg  [dds_prescale_bits_pp-1:0];dds_prescale_bits_pp;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;dds_phase;reg  [dds_bits_pp-1:0];dds_bits_pp;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;pulse;wire;1;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;dds_clk;wire;1;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;delayed_pulse;reg;1;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;data;reg  [data_bits_pp-1:0];data_bits_pp;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;data_ready;reg;1;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;error_over_run;reg;1;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;error_under_run;reg;1;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;error_all_low;reg;1;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;word_xfer_l;wire;1;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;mid_bit_l;wire;1;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;start_bit_l;wire;1;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;stop_bit_l;wire;1;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;all_low_l;wire;1;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;intrabit_count_l;reg  [3:0];4;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;shifter_preset;reg;1;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;m1_state;reg  [2:0];3;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;m1_next_state;reg  [2:0];3;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;m2_state;reg;1;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;m2_next_state;reg;1;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;load_request;reg;1;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;tx_bit_count_l;reg  [tx_bit_count_bits_pp-1:0];tx_bit_count_bits_pp;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;prescaler_count_l;reg  [3:0];4;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;m1_state;reg  [1:0];2;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;m1_next_state;reg  [1:0];2;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;begin_last_bit;wire;1;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;start_sending;wire;1;rs232tx;rs232tx;rs232tx;rs232tx
+Internal;tx_clk_1x;wire;1;rs232tx;rs232tx;rs232tx;rs232tx
+file_name(rs232_syscon.v)
+component;signal_name;type;size;instance src;component_src;instance_dst;component_dst
+rs232_syscon;clk_i;wire;1;input;input;rs232_syscon;rs232_syscon
+rs232_syscon;reset_i;wire;1;input;input;rs232_syscon;rs232_syscon
+rs232_syscon;ack_i;wire;1;input;input;rs232_syscon;rs232_syscon
+rs232_syscon;err_i;wire;1;input;input;rs232_syscon;rs232_syscon
+rs232_syscon;master_bg_i;wire;1;input;input;rs232_syscon;rs232_syscon
+rs232_syscon;master_stb_i;wire;1;input;input;rs232_syscon;rs232_syscon
+rs232_syscon;master_we_i;wire;1;input;input;rs232_syscon;rs232_syscon
+rs232_syscon;rs232_rxd_i;wire;1;input;input;rs232_syscon;rs232_syscon
+rs232_syscon;rst_o;wire;1;rs232_syscon;rs232_syscon;output;output
+rs232_syscon;master_br_o;wire;1;rs232_syscon;rs232_syscon;output;output
+rs232_syscon;stb_o;wire;1;rs232_syscon;rs232_syscon;output;output
+rs232_syscon;cyc_o;wire;1;rs232_syscon;rs232_syscon;output;output
+rs232_syscon;we_o;wire;1;rs232_syscon;rs232_syscon;output;output
+rs232_syscon;rs232_txd_o;wire;1;rs232_syscon;rs232_syscon;output;output
+Internal;rst_o;reg;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;master_br_o;reg;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;watchdog_timer_done;wire;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;rd_addr_field_done;wire;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;rd_data_field_done;wire;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;rd_line_done;wire;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;char_is_enter;wire;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;char_is_whitespace;wire;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;char_is_num;wire;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;char_is_a_f;wire;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;char_is_hex;wire;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;char_is_r;wire;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;char_is_w;wire;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;char_is_i;wire;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;rx_char_is_enter;wire;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;rx_char_is_backspace;wire;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;msg_pointer;wire  [4:0];5;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;hex_digit;wire  [3:0];4;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;rs232_echo;reg;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;msg_char;reg  [7:0];8;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;msg_base;reg  [4:0];5;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;msg_offset;reg  [4:0];5;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;reset_msg_offset;reg;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;incr_msg_offset;reg;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;cmd_i;reg;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;cmd_r;reg;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;cmd_w;reg;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;shift_rd_adr;reg;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;store_adr;reg;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;store_dat;reg;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;store_qty;reg;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;reset_adr;reg;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;reset_dat;reg;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;reset_qty;reg;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;init_qty;reg;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;capture_dat;reg;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;stb_l;reg;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;we_l;reg;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;command;reg  [1:0];2;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;reset_adr_offset;reg;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;incr_adr_offset;reg;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;cmd_ptr;reg  [cmd_ptr_bits_pp-1:0];cmd_ptr_bits_pp;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;reset_cmd_ptr;reg;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;incr_cmd_ptr;reg;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;decr_cmd_ptr;reg;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;cmd_buffer_write;reg;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;cmd_buffer;reg  [7:0];8;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;cmd_char;wire  [7:0];8;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;lc_cmd_char;wire  [7:0];8;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;m1_state;reg  [4:0];5;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;m1_next_state;reg  [4:0];5;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;reset_rd_field_count;reg;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;reset_rd_digit_count;reg;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;incr_rd_field_count;reg;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;incr_rd_digit_count;reg;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;rd_field_count;reg  [rd_field_count_bits_pp-1:0];rd_field_count_bits_pp;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;rd_digit_count;reg  [rd_digit_count_bits_pp-1:0];rd_digit_count_bits_pp;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;watchdog_timer_count;reg  [watchdog_timer_bits_pp-1:0];watchdog_timer_bits_pp;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;reset_watchdog;reg;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;serial_clk;wire;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;rs232_rx_error;wire  [2:0];3;rs232_rx_block,rs232_rx_block,rs232_rx_block;rs232rx,rs232rx,rs232rx;rs232_syscon;rs232_syscon
+Internal;rs232_tx_load;wire;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;rs232_tx_load_request;wire;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;rs232_rx_data_ready;wire;1;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;rs232_rx_char;wire  [7:0];8;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
+Internal;rs232_tx_char;wire  [7:0];8;rs232_syscon;rs232_syscon;rs232_syscon;rs232_syscon
